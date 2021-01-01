@@ -3,10 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { TabViewComponent } from './components/tab-view/tab-view.component';
+import { TrendingComponent } from './components/trending/trending.component';
+import { VideoComponent } from './components/video/video.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CarouselComponent,
+    GalleryComponent,
+    SliderComponent,
+    TabViewComponent,
+    TrendingComponent,
+    VideoComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialsModule } from './materials/materials.module';
 import { AppComponent } from './app.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
@@ -11,6 +12,7 @@ import { TrendingComponent } from './components/trending/trending.component';
 import { VideoComponent } from './components/video/video.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

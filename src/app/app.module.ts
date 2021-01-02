@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialsModule } from './materials/materials.module';
 import { AppComponent } from './app.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FormsModule } from '@angular/forms';
+
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { TabViewComponent } from './components/tab-view/tab-view.component';
@@ -16,7 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,  
     CarouselComponent,
     GalleryComponent,
     SliderComponent,
@@ -28,8 +32,10 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialsModule
+    MaterialsModule,
+    FormsModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

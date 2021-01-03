@@ -1,7 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminComponent } from './components/admin/admin.component';
+import { HomeComponent } from './components/home/home.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'Admin',
+    component: AdminComponent
+  },
+  {
+    path: 'Home',
+    component: HomeComponent
+  },
+  {
+    path:'',
+    redirectTo: 'Home', pathMatch: 'prefix'
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

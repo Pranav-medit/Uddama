@@ -1,0 +1,34 @@
+
+
+ 
+<div fxLayout="column">
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="5%" fxFlex="100">
+  <div fxFlex="15">
+    <div fxLayout="column" *ngFor = "let options of optionsArray;let i = index">
+        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="20">
+            <div fxLayout="row" fxLayoutAlign="center center" fxFlex="10">
+              <button mat-button [disabled]="i == 0" (click)="setOrder('upward', i)">
+                  <mat-icon color="primary" >arrow_upward </mat-icon> 
+              </button>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" fxFlex>
+              {{options.displayName}}
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" fxFlex="15">
+              <button mat-button [disabled]="i == optionsArray.length -1" (click)="setOrder('downward', i)">
+                  <mat-icon color="primary" >arrow_downward</mat-icon>
+              </button>
+            </div>
+        </div>
+  </div>
+  </div>
+  <div fxLayout="row wrap" fxFlex>
+    <div *ngFor = "let options of optionsArray;let i=index" [fxFlex]="(!options.width)? 100 : options.width " style="border: 2px solid black;height:100px">
+          {{options.displayName}}
+   </div> 
+  </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="end center">
+    <button mat-button color="primary">Save Layout</button>
+</div>
+</div>

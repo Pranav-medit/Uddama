@@ -12,6 +12,8 @@ import { TrendingComponent } from './components/trending/trending.component';
 import { VideoComponent } from './components/video/video.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { FooterComponent } from './components/footer/footer.component';
     TrendingComponent,
     VideoComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AdminComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent,  
+    AppComponent,
     CarouselComponent,
     GalleryComponent,
     SliderComponent,
@@ -35,7 +35,7 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialsModule,
-    FormsModule  
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

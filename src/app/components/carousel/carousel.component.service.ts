@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Slide } from './carousel.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,7 @@ export class CarouselComponentService {
       captionLink: 'https://facebook.com'
     }
   ];
-  getSlideData(): any[]{
+  getSlideData(): Slide[]{
     return this.slides;
   }
 }

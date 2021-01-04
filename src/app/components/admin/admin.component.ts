@@ -8,22 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class AdminComponent implements OnInit {
   optionsArray = [
     {
-      displayName:'Carousel', width:100 
+      displayName:'Carousel', width:99 
     },
     {
-      displayName:'Slider 1', width:50 
+      displayName:'Slider 1', width:48 
     },
     {
-      displayName:'Slider 2' , width:50
+      displayName:'Slider 2' , width:48
     },
     {
-      displayName:'Tab View' , width:100
+      displayName:'Tab View' , width:99
     },
     {
-      displayName:'Trending' , width:50
+      displayName:'Trending' , width:48
     },
     {
-      displayName:'Video', width:50 
+      displayName:'Video', width:48
     }
   ];
   constructor() { }
@@ -46,23 +46,27 @@ export class AdminComponent implements OnInit {
     }
     this.optionsArray.forEach((each:any, index)=>{
       if(index === 0){
-        each.width = 100;
+        each.width = 99;
       }
       if(index === 1){
-        each.width = 50;
+        each.width = 48;
       }
       if(index === 2){
-        each.width = 50;
+        each.width = 48;
       }
       if(index === 3){
-        each.width = 100;
+        each.width = 99;
       }
       if(index === 4){
-        each.width = 50;
+        each.width = 48;
       }
       if(index === 5){
-        each.width = 50;
+        each.width = 48;
       }
     })
   } 
+
+  saveLayout(){
+    console.log('save');
+  }
 }

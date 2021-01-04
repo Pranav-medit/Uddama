@@ -22,13 +22,13 @@
         </div>
   </div>
   </div>
-  <div fxLayout="row wrap" fxFlex>
-    <div *ngFor = "let options of optionsArray;let i=index" [fxFlex]="(!options.width)? 100 : options.width " style="border: 2px solid black;height:100px">
+  <div fxLayout="row wrap"  fxFlex>
+    <mat-card *ngFor = "let options of optionsArray;let i=index" [fxFlex]="(!options.width)? 100 : options.width " style="height:100px; margin:1%">
           {{options.displayName}}
-   </div> 
+    </mat-card> 
   </div>
 </div>
 <div fxLayout="row" fxLayoutAlign="end center">
-    <button mat-button color="primary">Save Layout</button>
+    <button mat-stroked-button color="primary" (click)="saveLayout()">Save Layout</button>
 </div>
 </div>

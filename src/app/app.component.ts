@@ -12,6 +12,11 @@ import { Slide } from './components/carousel/carousel.interface';
 export class AppComponent implements OnInit {
   // Slide Variable to store slide data
   slides: Slide[];
+  slideStyle = {
+    height: '400px',
+    width: '100%',
+    display: 'block'
+  };
   // title = 'uddama';
   constructor(private carouselService: CarouselComponentService) {
   }

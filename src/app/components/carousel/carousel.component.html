@@ -3,12 +3,15 @@
 <div (mouseenter)='onHover()' (mouseleave)="onBlur()" class="div div__cauroselWrapper carousel">
   <ng-container *ngFor="let slide of slides; let i = index">
     <div>
-      <img
-      *ngIf="i === currentSlide"
-      [src]="slide.imgSrc"
-      class="slide"
+    <div *ngIf="i === currentSlide" class="slide">
+        <img *ngFor="let imageSrc of slide.images "
+      
+      [src]="imageSrc"
+      
       [@slideAnimation]="animationType"
     />
+    </div>
+      
     <div *ngIf="i === currentSlide" class="div div__caption">
           <p><a id="a a__captionLink" [href]="slide.captionLink">{{slide.caption}}</a></p>
     </div>

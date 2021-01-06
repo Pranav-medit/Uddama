@@ -13,26 +13,37 @@ export class AppComponent {
   slides: Slide[] = [
     {
       caption: 'This is wonderful',
-      imgSrc:
+      images: [
         'https://picsum.photos/600/800',
+        'https://picsum.photos/600/800'
+      ],
       captionLink: 'https://google.com'
     },
     {
       caption: 'This is wonderful and beautiful',
-      imgSrc:
-        'https://picsum.photos/800/900',
+      images: [
+      'https://picsum.photos/800/900',
+      'https://picsum.photos/1000/700',
+      'https://picsum.photos/600/800'
+      ],
       captionLink: 'https://github.com'
     },
     {
       caption: 'In The Wilderness',
-      imgSrc:
-        'https://picsum.photos/1000/800',
+      images: [
+       'https://picsum.photos/1000/800',
+       'https://picsum.photos/800/900',
+       'https://picsum.photos/1000/700',
+       'https://picsum.photos/600/800'
+      ],
       captionLink: 'https://udemy.com'
     },
     {
-      caption: 'This thing is just awesome',
-      imgSrc:
+      caption : 'This thing is just awesome',
+      images : [
         'https://picsum.photos/1000/700',
+        'https://picsum.photos/800/900'
+      ],
       captionLink: 'https://facebook.com'
     }
   ];

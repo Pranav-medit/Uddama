@@ -2,6 +2,6 @@
 
 export interface Slide {
   caption?: string;
-  imgSrc: string;
+  images: any;
   captionLink: string;
 }

@@ -1,0 +1,13 @@
+
+<div fxLayout="column" fxFlex>
+    <div fxFlex="100">
+        <mat-form-field appearance="outline">
+            <mat-label>Edit Category</mat-label>
+            <input matInput [(ngModel)]="data.displayName">
+          </mat-form-field>
+    </div>  
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+       <button mat-raised-button color="primary" (click)="cancel()">Cancel</button>
+       <button mat-raised-button color="primary" (click)="save()">Save</button>
+    </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-admin',
@@ -6,29 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-  optionsArray = [
+  screenHeight = {}; 
+  optionsArray = [];
+  componentList = [
     {
       displayName:'Carousel', width:99 
     },
     {
-      displayName:'Slider 1', width:48 
-    },
-    {
-      displayName:'Slider 2' , width:48
-    },
-    {
-      displayName:'Tab View' , width:99
-    },
-    {
-      displayName:'Trending' , width:48
-    },
-    {
-      displayName:'Video', width:48
+      displayName:'Slider', width:48 
     }
-  ];
-  constructor() { }
+  ]
+  constructor(public dialog: MatDialog) { 
+   
+    //this.screenHeight ={height: window.screen.height - 200 + 'px'};
+    //this.screenHeight ={height:70 + 'px'};
+    console.log(this.screenHeight);
+  }
    
   ngOnInit(): void {
+    
   }
   
   setOrder(type, index){
@@ -45,28 +43,49 @@ export class AdminComponent implements OnInit {
       this.optionsArray[index+1] = currentObj; 
     }
     this.optionsArray.forEach((each:any, index)=>{
-      if(index === 0){
+      // if(index === 0){
+      //   each.width = 99;
+      // }
+      // if(index === 1){
+      //   each.width = 48;
+      // }
+      // if(index === 2){
+      //   each.width = 48;
+      // }
+      // if(index === 3){
+      //   each.width = 99;
+      // }
+      // if(index === 4){
+      //   each.width = 48;
+      // }
+      // if(index === 5){
+      //   each.width = 48;
+      // }
+      if(each.displayName === 'Carousel'){
         each.width = 99;
-      }
-      if(index === 1){
-        each.width = 48;
-      }
-      if(index === 2){
-        each.width = 48;
-      }
-      if(index === 3){
-        each.width = 99;
-      }
-      if(index === 4){
-        each.width = 48;
-      }
-      if(index === 5){
+      }else {
         each.width = 48;
       }
     })
   } 
 
   saveLayout(){
-    console.log('save');
+    console.log('save', this.optionsArray);
+  }
+
+  addComponent(component){
+    console.log('add');
+    this.optionsArray.push(component);
+  }
+
+  editCategory(option,index){
+    const dialogRef = this.dialog.open(DialogBoxComponent,{width: '400px', data: JSON.parse(JSON.stringify(option))});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      if(result) {
+        this.optionsArray[index] = result;
+      }
+    });
   }
 }

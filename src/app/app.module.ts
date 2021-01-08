@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialsModule } from './materials/materials.module';
@@ -14,6 +15,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
+import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
 
 
 @NgModule({
@@ -28,12 +30,14 @@ import { HomeComponent } from './components/home/home.component';
     HeaderComponent,
     FooterComponent,
     AdminComponent,
-    HomeComponent
+    HomeComponent,
+    DialogBoxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialsModule
+    MaterialsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

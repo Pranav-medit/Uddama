@@ -1,1 +1,29 @@
-<p>slider works!</p>
+<div #slickWidthDiv  style="margin: auto;" class="div div__slickCarouselwrapper">
+
+    <ngx-slick-carousel
+    style="margin: auto;"
+     class="carousel" #slickModal="slick-carousel" [config]="slideConfig" >
+        <div [ngStyle]="{'width':cardStyle.width+'px','height':cardStyle.height+'px','border-radius':cardStyle.borderRadius,
+    'margin-left':cardStyle.spaceBetweenCards+'px',
+    'margin-right':cardStyle.spaceBetweenCards+'px'}" ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <div class="div div__slideWrapper" style="width:100%;height:100%;">
+                <img class="img img__slickImage" [ngStyle]="{'border-radius': cardStyle.borderRadius + 'px'}" [src]="slide.img"
+                    alt="">
+                <div [ngStyle]="{'border-radius':cardStyle.borderRadius+'px'}" class="div div__captionWrapper">
+                    <p><a [href]="slide.captionLink">
+                        {{slide.captionText}}</a></p>
+                </div>
+            </div>
+
+        </div>
+
+    </ngx-slick-carousel>
+    <button class="control prev">
+        <i (click)="slickModal.slickPrev()" class="i i__buttonIcon fas fa-caret-square-left btn btn__prev"></i>
+    </button>
+    <button class="control next" (click)="slickModal.slickNext()">
+        <i class="i i__buttonIcon fas fa-caret-square-right"></i>
+    </button>
+</div>
+
+

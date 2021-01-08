@@ -28,13 +28,14 @@ import {
 export class CarouselComponent implements AfterViewInit {
   // Slide data from parent
   @Input() slides: Slide[];
+  @Input() carouselSlideStyle: any;
   animationType = 'fade';
 
   // setInterval return that representing the ID value of the timer that is stored in intervalStore
   intervalStore: number;
 
   // Seconds Until Slides change
-  interval = 4000;
+  interval = 3000;
    // In ms
 
   currentSlide = 0 ;
@@ -65,6 +66,7 @@ export class CarouselComponent implements AfterViewInit {
 
   // Upon first time the app starts set slide timer
   ngAfterViewInit(): void{
+    this.interval = this.carouselSlideStyle.speed;
     this.onBlur();
   }
 }

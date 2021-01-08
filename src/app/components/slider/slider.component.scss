@@ -1,0 +1,83 @@
+$caption-font:"Montserrat", sans-serif;
+$caption-font-size:1.5rem;
+$caption-font-weight:bold ;
+
+$div-bg-from-color:rgba(0,0,0,1);
+$div-bg-to-color:rgba(0,0,0,0);
+
+$hover-color:rgb(63,81,181,1);
+div{
+    outline:none;
+}
+.img__slickImage{
+    width:100%;
+    height: 100%;
+    outline:none;
+}
+.div__slickCarouselwrapper{
+    position: relative;
+    outline:none;
+}
+.control {
+    top:0;
+    border: none;
+    background-color: transparent;
+    outline: 0; // remove blue outline border, but make sure they are still focussable for accessibility
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5em;
+    color: black;
+    font-weight: bold;
+    font-size: 3rem;    
+    user-select: none;
+    height: 100%;
+    opacity: 1 !important;
+    z-index: 1;
+    /* Position the buttons */
+    &.next { 
+      right: 0;
+    }
+    &.prev {
+      left: 0;
+    }
+    & .i__buttonIcon:hover{
+      color:$hover-color;
+    }
+}
+// .i__buttonIcon:hover{
+//   color:$hover-color;
+// }
+.div__slideWrapper{
+ position: relative;
+}
+.div__captionWrapper{
+  display: block;
+  width: 100%;
+  height: 50%;
+  position: absolute;  
+  bottom:0;
+  z-index: 1;
+  font-family: $caption-font;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  font-size:$caption-font-size;
+  font-weight:$caption-font-weight ;
+  background-image: linear-gradient(to top, $div-bg-from-color,$div-bg-to-color);
+  z-index: 2; 
+  overflow: hidden;
+  outline: none;
+  & a{
+    display: inline-block;
+    color: aliceblue;
+    text-decoration: none;
+    outline: none;
+    &:hover{
+      color:$hover-color;
+    }
+}
+
+}

@@ -22,7 +22,6 @@ export class AdminComponent implements OnInit {
    
     //this.screenHeight ={height: window.screen.height - 200 + 'px'};
     //this.screenHeight ={height:70 + 'px'};
-    console.log(this.screenHeight);
   }
    
   ngOnInit(): void {
@@ -74,7 +73,6 @@ export class AdminComponent implements OnInit {
   }
 
   addComponent(component){
-    console.log('add');
     this.optionsArray.push(component);
   }
 
@@ -82,7 +80,6 @@ export class AdminComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogBoxComponent,{width: '400px', data: JSON.parse(JSON.stringify(option))});
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       if(result) {
         this.optionsArray[index] = result;
       }

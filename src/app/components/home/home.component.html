@@ -1,24 +1,31 @@
 
   <div fxLayout="row wrap">
-    <div fxFlex="100" fxFlex.lt-sm="100">Carousel
-        <app-carousel></app-carousel>
+    <div fxFlex="100" fxFlex.lt-sm="100">
+        <app-carousel [slides]="slides"  [carouselSlideStyle]="carouselSlideStyle"></app-carousel>
       </div>
-      <div fxFlex="100" fxFlex.lt-sm="100" style="border: 2px solid black; background-color: gray">Gallery
+      <div fxFlex="100" fxFlex.lt-sm="100">Gallery
       <app-gallery></app-gallery>
       </div>
-      <div fxFlex="50" fxFlex.lt-sm="100" style="border: 2px solid black; background-color: gray">Slider 1
-      <app-slider></app-slider>
+      <div fxFlex="50" fxFlex.lt-sm="100" >
+        <app-slider [slides]="sliderSlides" [cardStyle]="cardStyle"></app-slider>
       </div>
-      <div fxFlex="50" fxFlex.lt-sm="100" style="border: 2px solid black; background-color: gray">Slider 2
-        <app-slider></app-slider>
-        </div>
-      <div fxFlex="100" fxFlex.lt-sm="100" style="border: 2px solid black; background-color: gray">Tab View
+      <div fxFlex="50" fxFlex.lt-sm="100">
+        <app-slider [slides]="sliderSlides" [cardStyle]="cardStyle"></app-slider>
+      </div>
+      <div fxFlex="100" fxFlex.lt-sm="100" >Tab View
       <app-tab-view></app-tab-view>
       </div>
-      <div fxFlex="50" fxFlex.lt-sm="100" style="border: 2px solid black; background-color: gray">Trending
+      <div fxFlex="50" fxFlex.lt-sm="100">Trending
       <app-trending></app-trending>
       </div>
-      <div fxFlex="50" fxFlex.lt-sm="100" style="border: 2px solid black; background-color: gray">Video
+      <div fxFlex="50" fxFlex.lt-sm="100">Video
       <app-video></app-video>
       </div>
+      <div fxFlex="100" style="background-color:black;color:white">Footer
+        <app-footer></app-footer>
+      </div>
   </div>
+  <!-- <div fxFlex="100" style="position: fixed;left:0%;bottom:0%;z-index: 999;width:100%;height:60px;background-color:black;color:white">Footer
+    <app-footer></app-footer>
+  </div> -->
+

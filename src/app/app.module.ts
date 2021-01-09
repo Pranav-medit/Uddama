@@ -5,8 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialsModule } from './materials/materials.module';
 import { AppComponent } from './app.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FormsModule } from '@angular/forms';
+
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 import { TabViewComponent } from './components/tab-view/tab-view.component';
 import { TrendingComponent } from './components/trending/trending.component';
 import { VideoComponent } from './components/video/video.component';
@@ -28,8 +34,11 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    SlickCarouselModule,
     AppRoutingModule,
-    MaterialsModule
+    MaterialsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

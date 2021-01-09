@@ -2,28 +2,29 @@
   <div fxFlex="100" style="position: fixed;left:0%;top:0%;z-index: 999;width:100%">
     <app-header></app-header>
   </div>
-  <div fxFlex="100" fxFlex.lt-sm="100" [ngStyle]="{'background-color': 'gray','margin-top':'3.5em'}" [ngStyle.lt-sm]="{'background-color': 'gray','margin-top':'3.1em'}">Carousel
-    <app-carousel></app-carousel>
+  <div fxFlex="100" fxFlex.lt-sm="100" [ngStyle]="{'margin-top':'3.5em'}"
+    [ngStyle.lt-sm]="{'background-color': 'gray','margin-top':'3.1em'}">
+      <app-carousel [slides]="slides"  [carouselSlideStyle]="carouselSlideStyle"></app-carousel>
   </div>
   <div fxFlex="100" fxFlex.lt-sm="100" style="border: 2px solid black; background-color: gray">Gallery
-  <app-gallery></app-gallery>
+    <!-- <app-gallery></app-gallery> --> 
   </div>
-  <div fxFlex="50" fxFlex.lt-sm="100" style="border: 2px solid black; background-color: gray">Slider 1
-  <app-slider></app-slider>
+  <div fxFlex="50" fxFlex.lt-sm="100" style="border: 2px solid black; ">
+    <app-slider [slides]="sliderSlides" [cardStyle]="cardStyle"></app-slider>
   </div>
-  <div fxFlex="50" fxFlex.lt-sm="100" style="border: 2px solid black; background-color: gray">Slider 2
-    <app-slider></app-slider>
-    </div>
+  <div fxFlex="50" fxFlex.lt-sm="100" style="border: 2px solid black;">
+    <app-slider [slides]="sliderSlides" [cardStyle]="cardStyle"></app-slider>
+  </div>
   <div fxFlex="100" fxFlex.lt-sm="100" style="border: 2px solid black; background-color: gray">Tab View
-  <app-tab-view></app-tab-view>
+    <app-tab-view></app-tab-view>
   </div>
   <div fxFlex="50" fxFlex.lt-sm="100" style="border: 2px solid black; background-color: gray">Trending
-  <app-trending></app-trending>
+    <app-trending></app-trending>
   </div>
   <div fxFlex="50" fxFlex.lt-sm="100" style="border: 2px solid black; background-color: gray">Video
-  <app-video></app-video>
+    <app-video></app-video>
   </div>
   <div fxFlex="100" style="border: 2px solid black;height:100px;background-color:black;color:white">Footer
-  <app-footer></app-footer>
+    <app-footer></app-footer>
   </div>
 </div>

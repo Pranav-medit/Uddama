@@ -1,0 +1,46 @@
+
+<div fxLayout="column">
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="5%" fxFlex="100" fxLayout.lt-sm="column" fxLayoutAlign="start start" fxFlex="100">
+  <mat-card fxFlex="15">
+    <div fxLayout="column" *ngFor = "let options of optionsArray;let i = index" [ngStyle]="screenHeight">
+        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="20" style="margin-top:5px ;">
+            <div fxLayout="row" fxLayoutAlign="center center" fxFlex="10">
+              <button mat-button [disabled]="i == 0" (click)="setOrder('upward', i)">
+                  <mat-icon color="primary" >arrow_upward </mat-icon> 
+              </button>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" fxFlex>
+              {{options.displayName}}
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" fxFlex="15">
+              <button mat-button [disabled]="i == optionsArray.length -1" (click)="setOrder('downward', i)">
+                  <mat-icon color="primary">arrow_downward</mat-icon>
+              </button>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" fxFlex="25">
+              <button mat-mini-fab color="primary" (click)="editCategory(options, i)"> 
+                <mat-icon>edit</mat-icon>
+              </button>
+            </div>
+        </div>
+  </div>
+  <div style="margin-top: 10px;">
+    <mat-divider></mat-divider>
+  </div>
+  <div *ngFor="let component of componentList; let i = index" fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex="60" style="margin-top: 10px;">{{component.displayName}}</div> 
+      <div style="margin-top: 10px;">
+        <button mat-mini-fab color="primary" (click)="addComponent(component)"><mat-icon>add</mat-icon></button>
+      </div>
+  </div>
+  </mat-card>
+  <div fxLayout="row wrap"  fxFlex>
+    <mat-card *ngFor = "let options of optionsArray;let i=index" [fxFlex]="(!options.width)? 100 : options.width " style="height:100px; margin:1%">
+          {{options.displayName}}
+    </mat-card> 
+  </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="end center" [ngStyle.lt-sm]="{'margin-bottom.px':'100'}">
+    <button mat-stroked-button color="primary" (click)="saveLayout()">Save Layout</button>
+</div>
+</div>

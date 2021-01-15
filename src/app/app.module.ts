@@ -18,9 +18,10 @@ import { TrendingComponent } from './components/trending/trending.component';
 import { VideoComponent } from './components/video/video.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { AdminComponent } from './components/admin/admin.component';
+import { AdminComponent } from '../app/components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
+import { QuotesComponent } from './components/quotes/quotes.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
     FooterComponent,
     AdminComponent,
     HomeComponent,
-    DialogBoxComponent
+    DialogBoxComponent,
+    QuotesComponent
   ],
   imports: [
     BrowserModule,

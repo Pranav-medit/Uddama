@@ -1,0 +1,8 @@
+{
+    "Layout":[
+        {"component": "Carousel", "category": "Carousel", "width": 99},
+        {"component": "Slider", "category": "Slider", "width": 48},
+        {"component": "Slider", "category": "Slider", "width": 48},
+        {"component": "Carousel", "category": "Carousel", "width": 99}
+    ]
+}

@@ -2,17 +2,25 @@ import { Component, OnInit } from '@angular/core';
 // Importing Slide Interface for Carousel
 import { Slide } from '../carousel/carousel.interface'
 import { CardStyleInterface } from '../slider/card.style.interface';
-
+import { HomeService } from '../../service/home.service';
+import { PublicPostService } from '../../service/public-post.service'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  Config;
+  constructor(private homeConfig: HomeService, private publicPostService: PublicPostService) { 
+    this.homeConfig.getHomeConfig().subscribe((configResponse) => {
+      this.Config = configResponse;
+    });
+  }
 
   ngOnInit(): void {
+    this.publicPostService.getAllPosts().subscribe(result => {
+      console.log(result)
+    })
   }
    // Slide Variable to store slide data
    slides: Slide[] = [

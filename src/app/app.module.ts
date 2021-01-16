@@ -22,7 +22,11 @@ import { AdminComponent } from '../app/components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
 import { QuotesComponent } from './components/quotes/quotes.component';
-
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
+import {APOLLO_OPTIONS} from 'apollo-angular';
+import {HttpLink} from 'apollo-angular/http';
+import {InMemoryCache} from '@apollo/client/core';
 
 @NgModule({
   declarations: [
@@ -47,9 +51,24 @@ import { QuotesComponent } from './components/quotes/quotes.component';
     AppRoutingModule,
     MaterialsModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    GraphQLModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APOLLO_OPTIONS,
+      useFactory: (httpLink: HttpLink) => {
+        return {
+          cache: new InMemoryCache(),
+          link: httpLink.create({
+            uri: 'http://35.202.105.222/graphql',
+          }),
+        };
+      },
+       deps: [HttpLink],
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

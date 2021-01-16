@@ -12,10 +12,10 @@ export class AdminComponent implements OnInit {
   optionsArray = [];
   componentList = [
     {
-      displayName:'Carousel', width:99 
+     component:'Carousel' , category:'Carousel', width:99 
     },
     {
-      displayName:'Slider', width:48 
+      component: 'Slider', category:'Slider', width:48 
     }
   ]
   constructor(public dialog: MatDialog) { 
@@ -42,24 +42,6 @@ export class AdminComponent implements OnInit {
       this.optionsArray[index+1] = currentObj; 
     }
     this.optionsArray.forEach((each:any, index)=>{
-      // if(index === 0){
-      //   each.width = 99;
-      // }
-      // if(index === 1){
-      //   each.width = 48;
-      // }
-      // if(index === 2){
-      //   each.width = 48;
-      // }
-      // if(index === 3){
-      //   each.width = 99;
-      // }
-      // if(index === 4){
-      //   each.width = 48;
-      // }
-      // if(index === 5){
-      //   each.width = 48;
-      // }
       if(each.displayName === 'Carousel'){
         each.width = 99;
       }else {

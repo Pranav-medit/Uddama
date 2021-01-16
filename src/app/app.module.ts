@@ -27,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {APOLLO_OPTIONS} from 'apollo-angular';
 import {HttpLink} from 'apollo-angular/http';
 import {InMemoryCache} from '@apollo/client/core';
+import { CkEditorComponent } from './components/ck-editor/ck-editor.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import {InMemoryCache} from '@apollo/client/core';
     AdminComponent,
     HomeComponent,
     DialogBoxComponent,
-    QuotesComponent
+    QuotesComponent,
+    CkEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import {InMemoryCache} from '@apollo/client/core';
     BrowserAnimationsModule,
     FormsModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    CKEditorModule
   ],
   providers: [
     {

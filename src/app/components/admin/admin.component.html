@@ -10,7 +10,7 @@
               </button>
             </div>
             <div fxLayout="row" fxLayoutAlign="center center" fxFlex>
-              {{options.displayName}}
+              {{options.category}}
             </div>
             <div fxLayout="row" fxLayoutAlign="center center" fxFlex="15">
               <button mat-button [disabled]="i == optionsArray.length -1" (click)="setOrder('downward', i)">
@@ -28,7 +28,7 @@
     <mat-divider></mat-divider>
   </div>
   <div *ngFor="let component of componentList; let i = index" fxLayout="row" fxLayoutAlign="center center">
-      <div fxFlex="60" style="margin-top: 10px;">{{component.displayName}}</div> 
+      <div fxFlex="60" style="margin-top: 10px;">{{component.category}}</div> 
       <div style="margin-top: 10px;">
         <button mat-mini-fab color="primary" (click)="addComponent(component)"><mat-icon>add</mat-icon></button>
       </div>
@@ -36,7 +36,7 @@
   </mat-card>
   <div fxLayout="row wrap"  fxFlex>
     <mat-card *ngFor = "let options of optionsArray;let i=index" [fxFlex]="(!options.width)? 100 : options.width " style="height:100px; margin:1%">
-          {{options.displayName}}
+          {{options.category}}
     </mat-card> 
   </div>
 </div>

@@ -2,7 +2,9 @@
     <div class="mat-title">Heading</div>       
     <div class="mat-title"><a href="">See all </a></div>
  </div>
-<div #slickWidthDiv  style="margin: auto;" class="div div__slickCarouselwrapper">
+   <div #slickWidthDiv  style="margin: auto;" class="div div__slickCarouselwrapper">
+    <div    *ngIf="loading" class="div__loading"><div class="loader Indigo">Loading...</div></div>
+    
 
     <ngx-slick-carousel
     style="margin: auto;"
@@ -14,7 +16,7 @@
                 <img class="img img__slickImage" [ngStyle]="{'border-radius': cardStyle.borderRadius + 'px'}" [src]="slide.img"
                     alt="">
                 <div [ngStyle]="{'border-radius':cardStyle.borderRadius+'px'}" class="div div__captionWrapper">
-                    <p><a [href]="slide.captionLink">
+                    <p><a  [href]="slide.captionLink">
                         {{slide.captionText}}</a></p>
                 </div>
             </div>

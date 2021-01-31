@@ -31,6 +31,7 @@ import { CkEditorComponent } from './components/ck-editor/ck-editor.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FormBuilderComponent } from './components/form-builder/form-builder.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SynopsisComponent } from './components/synopsis/synopsis.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DialogBoxComponent,
     QuotesComponent,
     CkEditorComponent,
-    FormBuilderComponent
+    FormBuilderComponent,
+    SynopsisComponent
   ],
   imports: [
     BrowserModule,

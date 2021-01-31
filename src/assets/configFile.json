@@ -3,6 +3,7 @@
         {"component": "Carousel", "category": "Carousel", "width": 99},
         {"component": "Slider", "category": "Slider", "width": 48},
         {"component": "Slider", "category": "Slider", "width": 48},
-        {"component": "Carousel", "category": "Carousel", "width": 99}
+        {"component": "Carousel", "category": "Carousel", "width": 68},
+        {"component": "Carousel", "category": "Carousel", "width": 28}
     ]
 }

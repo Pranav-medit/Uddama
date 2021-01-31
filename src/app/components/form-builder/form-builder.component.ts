@@ -14,7 +14,7 @@ export class FormBuilderComponent implements OnInit {
  } 
   profileGroup = this.fb.group({
      name : ['', Validators.required],
-     dateOfBirth : ['', [Validators.required, Validators.pattern('([0-9]{2}[-]{1}){2}[0-9]{4}')]],
+     dateOfBirth : ['', [Validators.required, Validators.pattern('^([0]?[1-9]|[1|2][0-9]|[3][0|1])[-]([0]?[1-9]|[1][0-2])[-]([0-9]{4}|[0-9]{2})$')]],
      about : ['', Validators.required]
   })
 

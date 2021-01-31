@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { SlickCarouselComponent } from 'ngx-slick-carousel';
 
 @Component({
   selector: 'app-slider',
@@ -8,7 +9,7 @@ import { Component, ElementRef, HostListener, Input, OnInit, ViewChild, AfterVie
 export class SliderComponent implements OnInit, AfterViewInit {
 
   @ViewChild('slickWidthDiv') slickWidthDiv: ElementRef;
-
+  @ViewChild('slickModal') slickModal: SlickCarouselComponent;
   // Slide Data
   @Input() slides: any;
 
@@ -17,6 +18,7 @@ export class SliderComponent implements OnInit, AfterViewInit {
 
   // Screen width(viewport width)
   scrWidth = 0;
+  loading = true;
 
   // Number of slides to show or scroll
   slidesToShow = 0;
@@ -41,6 +43,7 @@ export class SliderComponent implements OnInit, AfterViewInit {
       }
       this.scrWidth = this.slickWidthDiv.nativeElement.offsetWidth;
     }
+    
     this.adjustSlidesPerScreenWidth();
   }
   // Hey coder see below function title
@@ -57,14 +60,20 @@ export class SliderComponent implements OnInit, AfterViewInit {
     };
 
   }
-
+  constructor(){
+    this.loading = true;
+  }
   ngOnInit(): void {
     this.slidesToShow = this.cardStyle.slidesToShow;
     this.slidesToScroll = this.cardStyle.slidesToScroll;
     this.getScreenSize();
   }
   ngAfterViewInit(): void {
+    this.slickModal.slickNext();
     this.getScreenSize();
+    setTimeout(() => {
+      this.loading = false;
+    }, 1600);
   }
 
 }

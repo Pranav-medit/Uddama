@@ -32,6 +32,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FormBuilderComponent } from './components/form-builder/form-builder.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SynopsisComponent } from './components/synopsis/synopsis.component';
+import { CardComponent } from './components/card/card.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { SynopsisComponent } from './components/synopsis/synopsis.component';
     QuotesComponent,
     CkEditorComponent,
     FormBuilderComponent,
-    SynopsisComponent
+    SynopsisComponent,
+    CardComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

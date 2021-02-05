@@ -124,5 +124,8 @@ export class HomeComponent implements OnInit {
     slidesToShow: 4,
     slidesToScroll: 1
   };
+  
+  //_________________CARD_________________
+  
 
 }

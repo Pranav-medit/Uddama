@@ -5,6 +5,7 @@ import { CkEditorComponent } from './components/ck-editor/ck-editor.component';
 import { FormBuilderComponent } from './components/form-builder/form-builder.component';
 import { HomeComponent } from './components/home/home.component';
 import { SynopsisComponent } from './components/synopsis/synopsis.component';
+import { ApprovePageComponent } from './components/approve-page/approve-page.component'
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'Synopsis',
     component: SynopsisComponent
+  },
+  {
+    path: 'Approve',
+    component: ApprovePageComponent
   },
   {
     path:'',

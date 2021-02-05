@@ -8,7 +8,7 @@
 
   <div fxLayout = "column" fxFlex="100">
     <div fxLayout="row wrap">
-      <div  *ngFor="let config of Config.Layout" [fxFlex]="(!config.width)? 100 : config.width " style="margin:1%">
+      <div  *ngFor="let config of Config.Layout" [fxFlex.lt-sm]="100" [fxFlex]="(!config.width)? 100 : config.width " style="margin:1%">
            <span  *ngIf="config.category == 'Carousel'">  
              <app-carousel [slides]="slides"  [carouselSlideStyle]="carouselSlideStyle"></app-carousel>
            </span> 

@@ -1,0 +1,21 @@
+<form [formGroup]="profileGroup" (ngSubmit)="profileGroup.valid && onSubmit()">
+    <div>
+    <mat-form-field appearance="outline" fxFlexFill>
+        <mat-label> Name </mat-label>
+        <input matInput formControlName="name">
+        <mat-error>* Name is required *</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlexFill>
+        <mat-label> Date Of Birth </mat-label>
+        <input matInput formControlName="dateOfBirth" placeholder="dd-mm-yyyy">
+        <mat-error  *ngIf="profileGroup.controls.dateOfBirth.errors && profileGroup.controls.dateOfBirth.errors.required">* Name is required *</mat-error>
+        <mat-error  *ngIf="profileGroup.controls.dateOfBirth.errors && profileGroup.controls.dateOfBirth.errors.pattern">* Please enter valid Date of Birth ex: 13-02-1996 *</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlexFill>
+        <mat-label> About </mat-label>
+        <textarea matInput formControlName="about"></textarea>
+        <mat-error>* About is required *</mat-error>
+    </mat-form-field>
+   </div>
+    <button mat-button type = "submit"> Submit </button>
+</form>

@@ -27,6 +27,11 @@ import { HttpClientModule } from '@angular/common/http';
 import {APOLLO_OPTIONS} from 'apollo-angular';
 import {HttpLink} from 'apollo-angular/http';
 import {InMemoryCache} from '@apollo/client/core';
+import { CkEditorComponent } from './components/ck-editor/ck-editor.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { FormBuilderComponent } from './components/form-builder/form-builder.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SynopsisComponent } from './components/synopsis/synopsis.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,10 @@ import {InMemoryCache} from '@apollo/client/core';
     AdminComponent,
     HomeComponent,
     DialogBoxComponent,
-    QuotesComponent
+    QuotesComponent,
+    CkEditorComponent,
+    FormBuilderComponent,
+    SynopsisComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +61,9 @@ import {InMemoryCache} from '@apollo/client/core';
     BrowserAnimationsModule,
     FormsModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    CKEditorModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

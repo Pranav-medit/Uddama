@@ -9,5 +9,7 @@ pipelines:
           caches:
             - node
           script:
+            - npm install -g firebase-tools
             - npm install --quiet
             - npm run build --prod
+            - firebase deploy

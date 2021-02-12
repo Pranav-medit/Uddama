@@ -4,9 +4,7 @@ pipelines:
  default:
    - step:
        name: Install, Unit tests, e2e tests, Build
-       caches:
-         - node
-       deployment: test
+       deployment: production
        script:
          - npm install
          - npm run build --prod

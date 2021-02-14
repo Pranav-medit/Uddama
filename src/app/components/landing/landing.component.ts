@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getProfiles } from 'src/app/Interface/profile.interface';
 import { ProfileService } from 'src/app/service/profile.service';
 
 @Component({

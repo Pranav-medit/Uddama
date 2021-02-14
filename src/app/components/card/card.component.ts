@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { getProfiles } from 'src/app/Interface/profile.interface';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',

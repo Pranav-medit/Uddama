@@ -1,0 +1,16 @@
+image: node:10.15.3
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: "Firebase production deployment"
+          deployment: production
+          caches:
+            - node
+          script:
+            - npm install -g firebase-tools
+            - npm install --quiet
+            - npm run build --prod
+            - firebase --project vishwathma-ui
+            - firebase deploy

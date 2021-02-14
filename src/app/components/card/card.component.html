@@ -1,0 +1,18 @@
+<mat-card [ngStyle]="{'margin': cardStyle.margin +'px','max-height': cardStyle.maxHeight+'px','max-width': cardStyle.maxWidth+'px'}"  class="mat-card mat-card__wrapper">
+    <mat-card-header>
+      <div mat-card-avatar [ngStyle]="{'background-image': 'url(' + card?.cardAvatar + ')','background-size': 'cover'}" class="mat-card-avatar mat-card-avatar__headerImage"></div>
+      <mat-card-title>{{card.cardTitle}}</mat-card-title>
+      <mat-card-subtitle>{{card.cardSubtitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img [ngStyle]="{'height': cardStyle.imgHeight +'px'}" class="img img__main" mat-card-image [src]="card.cardImage">
+    <mat-card-content>
+      <p>
+        {{card.cardContent}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions fxLayout>
+      <!-- <button mat-button><mat-icon>share</mat-icon>SHARE</button>
+      <button mat-button fxLayoutAlign="end"><mat-icon>thumb_up_alt </mat-icon>LIKE</button> -->
+      <button mat-button ><mat-icon>calendar_today</mat-icon>{{card.date}}</button>
+    </mat-card-actions>
+  </mat-card>

@@ -43,7 +43,6 @@ export class SliderComponent implements OnInit, AfterViewInit {
       }
       this.scrWidth = this.slickWidthDiv.nativeElement.offsetWidth;
     }
-    
     this.adjustSlidesPerScreenWidth();
   }
   // Hey coder see below function title

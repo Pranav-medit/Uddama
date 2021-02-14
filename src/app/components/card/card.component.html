@@ -30,8 +30,8 @@
 
   <mat-card fxLayout="column" >
         <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" class="layoutTop">
-          <img *ngIf="profile.cardImage" [ngStyle]="{'height': cardStyle.imgHeight +'px'}" class="img img__main" mat-card-image [src]="profile.cardImage">
-          <div fxLayout="row" fxLayoutAlign="center center" *ngIf="!profile.cardImage" >
+          <img *ngIf="profile.img" [ngStyle]="{'height': cardStyle.imgHeight +'px'}" class="img img__main" mat-card-image [src]="profile.img">
+          <div fxLayout="row" fxLayoutAlign="center center" *ngIf="!profile.img" >
              <mat-icon class="avatar">person</mat-icon>
           </div>
         </div>
@@ -43,13 +43,13 @@
            {{profile.name}}
           </div> 
           <div class="mat-caption" fxLayout="row" fxLayoutAlign="end center" fxFlex="100">
-           {{profile.data.dateOfBirth}}
+           {{profile?.data?.dateOfBirth}}
           </div>   
          </div>
          <div>
           <mat-divider></mat-divider>
         </div>
         <div fxLayout="row" fxLayoutAlign="start center" class="layoutTop">
-          {{profile.data.about}}
+          {{profile?.data?.about}}
         </div>
   </mat-card>

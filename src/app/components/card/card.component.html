@@ -1,18 +1,55 @@
+<!-- 
 <mat-card [ngStyle]="{'margin': cardStyle.margin +'px','max-height': cardStyle.maxHeight+'px','max-width': cardStyle.maxWidth+'px'}"  class="mat-card mat-card__wrapper">
     <mat-card-header>
       <div mat-card-avatar [ngStyle]="{'background-image': 'url(' + card?.cardAvatar + ')','background-size': 'cover'}" class="mat-card-avatar mat-card-avatar__headerImage"></div>
-      <mat-card-title>{{card.cardTitle}}</mat-card-title>
+      <mat-card-title>{{card.name}}</mat-card-title>
       <mat-card-subtitle>{{card.cardSubtitle}}</mat-card-subtitle>
     </mat-card-header>
-    <img [ngStyle]="{'height': cardStyle.imgHeight +'px'}" class="img img__main" mat-card-image [src]="card.cardImage">
-    <mat-card-content>
-      <p>
-        {{card.cardContent}}
-      </p>
+    <mat-divider></mat-divider>
+    <img *ngIf="card.cardImage" [ngStyle]="{'height': cardStyle.imgHeight +'px'}" class="img img__main" mat-card-image [src]="card.cardImage">
+    <div fxLayout="row" fxLayoutAlign="center center" *ngIf="!card.cardImage" >
+      <mat-icon class="avatar">person</mat-icon>
+    </div>
+    <div>
+      <mat-divider></mat-divider>
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="center center">
+      {{card.data.about}}
+    </div>
+    <mat-card-content >
+        
     </mat-card-content>
+    <mat-divider></mat-divider>
     <mat-card-actions fxLayout>
       <!-- <button mat-button><mat-icon>share</mat-icon>SHARE</button>
-      <button mat-button fxLayoutAlign="end"><mat-icon>thumb_up_alt </mat-icon>LIKE</button> -->
-      <button mat-button ><mat-icon>calendar_today</mat-icon>{{card.date}}</button>
+      <button mat-button fxLayoutAlign="end"><mat-icon>thumb_up_alt </mat-icon>LIKE</button>>
+      {{card.data.dateOfBirth}}
     </mat-card-actions>
+  </mat-card> -->
+
+  <mat-card fxLayout="column" >
+        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" class="layoutTop">
+          <img *ngIf="profile.cardImage" [ngStyle]="{'height': cardStyle.imgHeight +'px'}" class="img img__main" mat-card-image [src]="profile.cardImage">
+          <div fxLayout="row" fxLayoutAlign="center center" *ngIf="!profile.cardImage" >
+             <mat-icon class="avatar">person</mat-icon>
+          </div>
+        </div>
+        <div >
+          <mat-divider></mat-divider>
+        </div>
+        <div fxLayout="row" fxFlex="100" class="layoutTop">
+          <div fxLayout="row" fxLayoutAlign="start center" fxFlex="100">
+           {{profile.name}}
+          </div> 
+          <div class="mat-caption" fxLayout="row" fxLayoutAlign="end center" fxFlex="100">
+           {{profile.data.dateOfBirth}}
+          </div>   
+         </div>
+         <div>
+          <mat-divider></mat-divider>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" class="layoutTop">
+          {{profile.data.about}}
+        </div>
   </mat-card>

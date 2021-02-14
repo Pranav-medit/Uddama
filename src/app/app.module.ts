@@ -35,6 +35,7 @@ import { SynopsisComponent } from './components/synopsis/synopsis.component';
 import { CardComponent } from './components/card/card.component';
 import { LandingComponent } from './components/landing/landing.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

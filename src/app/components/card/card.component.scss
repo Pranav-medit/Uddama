@@ -1,1 +1,21 @@
+.img {
+    clip-path: circle(50%);
+}
 
+.avatar {
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    font-size: 105px;
+    text-align: center;
+    background-color: white;
+    color: gray;
+}
+.mat-card{
+    margin: 10px;
+}
+
+.layoutTop {
+    margin: 10px !important;
+}

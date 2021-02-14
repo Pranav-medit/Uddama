@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { ProfileService } from 'src/app/service/profile.service';
 
 @Component({
   selector: 'app-form-builder',
@@ -9,7 +10,7 @@ import { Validators } from '@angular/forms';
 })
 export class FormBuilderComponent implements OnInit {
  ProfileInfo = [];
- constructor(private fb: FormBuilder){
+ constructor(private fb: FormBuilder, private profileService: ProfileService){
  
  } 
   profileGroup = this.fb.group({
@@ -22,8 +23,16 @@ export class FormBuilderComponent implements OnInit {
   }
 
   onSubmit(){
-    this.ProfileInfo.push(this.profileGroup.value);
+    const postObject:any = {};
+    postObject.name = this.profileGroup.value.name;
+    postObject.data = JSON.stringify(this.profileGroup.value);
+    this.ProfileInfo.push(postObject);
     console.log(this.ProfileInfo);
+    this.profileService.saveProfile(postObject).subscribe((savedRes) => {
+        console.log("Res =" ,savedRes);
+    }, error => {
+        console.log("error =" , error);
+    })
   }
 
 }

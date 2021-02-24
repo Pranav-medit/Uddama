@@ -1,10 +1,17 @@
-<mat-toolbar color="primary" >
+<mat-toolbar class="mat-typography" color="primary" >
     <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex="100">
-        <div fxFlex="90">
-            <span [routerLink]="['/Home']" style="cursor: pointer;">
+        <div fxLayout="row" fxFlex="100">
+            <span fxFlexAlign="center" [routerLink]="['/Home']" style="cursor: pointer;">
                 Uddama
             </span>
+            <button [routerLink]="['/Home']" [routerLinkActive]="['routerActive']" color="primary" class="nav_button"   mat-flat-button>Home</button>
+            <button [routerLink]="['/SetProfile']" [routerLinkActive]="['routerActive']"  color="primary" class="nav_button"   style="margin-left: auto;" mat-flat-button>Profile</button>
+            <button [routerLink]="['/Synopsis']" [routerLinkActive]="['routerActive']" color="primary" class="nav_button"   mat-flat-button>Synopsis</button>
+            <button [routerLink]="['/SynopsisList']" [routerLinkActive]="['routerActive']" color="primary"  class="nav_button" mat-flat-button>Synopsis List</button>
+            <button *ngIf="admin" [routerLink]="['/Admin']" [routerLinkActive]="['routerActive']" color="primary" class="nav_button"   mat-flat-button>Admin</button>
+            <button *ngIf="admin" [routerLink]="['/Approve']" [routerLinkActive]="['routerActive']" color="primary"  class="nav_button" mat-flat-button>Approve</button>
         </div>
+
         <!-- <div fxFlex>
             <button mat-raised-button color="accent" [routerLink]="['/Admin']">Adjust Layout</button>
         </div> -->

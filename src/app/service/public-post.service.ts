@@ -22,6 +22,6 @@ export class PublicPostService {
         }
       `,
     })
-    .valueChanges
+    .valueChanges;
   }
 }

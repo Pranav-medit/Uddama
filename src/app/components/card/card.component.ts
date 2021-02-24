@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { getProfiles } from 'src/app/Interface/profile.interface';
 @Component({
   selector: 'app-card',
@@ -21,6 +22,9 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
     this.profile.data = JSON.parse(this.profile.data);
     console.log(this.profile);
+    setTimeout(() => {
+      // 
+    }, 1000);
   }
 
 }

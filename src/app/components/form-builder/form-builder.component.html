@@ -1,5 +1,5 @@
-<form [formGroup]="profileGroup" (ngSubmit)="profileGroup.valid && onSubmit()">
-    <div>
+<form #profileGroup1="ngForm" [formGroup]="profileGroup" (ngSubmit)="profileGroup.valid && onSubmit()">
+    <div style="margin-top:20px">
     <mat-form-field appearance="outline" fxFlexFill>
         <mat-label> Name </mat-label>
         <input matInput formControlName="name">
@@ -8,7 +8,7 @@
     <mat-form-field appearance="outline" fxFlexFill>
         <mat-label> Date Of Birth </mat-label>
         <input matInput formControlName="dateOfBirth" placeholder="dd-mm-yyyy">
-        <mat-error  *ngIf="profileGroup.controls.dateOfBirth.errors && profileGroup.controls.dateOfBirth.errors.required">* Name is required *</mat-error>
+        <mat-error  *ngIf="profileGroup.controls.dateOfBirth.errors && profileGroup.controls.dateOfBirth.errors.required ">* Name is required *</mat-error>
         <mat-error  *ngIf="profileGroup.controls.dateOfBirth.errors && profileGroup.controls.dateOfBirth.errors.pattern">* Please enter valid Date of Birth ex: 13-02-1996 *</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" fxFlexFill>
@@ -19,3 +19,12 @@
    </div>
     <button mat-button type = "submit"> Submit </button>
 </form>
+    <ngx-spinner
+    bdColor="rgba(51,51,51,0.8)"
+    size="medium"
+    color="#fff"
+    type="ball-spin-clockwise-fade"
+    [zIndex]='99'
+  >
+    <p style="font-size: 20px; color: #fff">Submitting...</p>
+  </ngx-spinner>

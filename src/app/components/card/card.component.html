@@ -27,7 +27,19 @@
       {{card.data.dateOfBirth}}
     </mat-card-actions>
   </mat-card> -->
-
+  <!-- <div style="position:relative;width:230px;height:230px">
+    <ngx-spinner
+    [fullScreen]="false"
+    bdColor="rgba(51,51,51,0.1)"
+    size="medium"
+    color="#fff"
+    type="ball-scale-multiple"
+    
+  >
+    <p style="font-size: 20px; color: black">Loading...</p>
+  </ngx-spinner>
+  </div> -->
+ 
   <mat-card fxLayout="column" >
         <div fxLayout="row" fxLayoutAlign="center center" fxFlex="100" class="layoutTop">
           <img *ngIf="profile.img" [ngStyle]="{'height': cardStyle.imgHeight +'px'}" class="img img__main" mat-card-image [src]="profile.img">

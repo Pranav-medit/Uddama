@@ -4,6 +4,8 @@ import { Slide } from '../carousel/carousel.interface'
 import { CardStyleInterface } from '../slider/card.style.interface';
 import { HomeService } from '../../service/home.service';
 import { PublicPostService } from '../../service/public-post.service'
+import { NgxSpinnerService } from 'ngx-spinner';
+import { SnackBarService } from 'src/app/service/snack-bar.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,19 +13,9 @@ import { PublicPostService } from '../../service/public-post.service'
 })
 export class HomeComponent implements OnInit {
   Config;
-  constructor(private homeConfig: HomeService, private publicPostService: PublicPostService) { 
-    this.homeConfig.getHomeConfig().subscribe((configResponse) => {
-      this.Config = configResponse;
-    });
-  }
 
-  ngOnInit(): void {
-    this.publicPostService.getAllPosts().subscribe(result => {
-      console.log(result)
-    })
-  }
-   // Slide Variable to store slide data
-   slides: Slide[] = [
+  // Slide Variable to store slide data
+  slides: Slide[] = [
     {
       caption: 'This is wonderful',
       images: [
@@ -34,20 +26,20 @@ export class HomeComponent implements OnInit {
     {
       caption: 'This is wonderful and beautiful',
       images: [
-      'https://picsum.photos/800/900',
+        'https://picsum.photos/800/900',
       ],
       captionLink: 'https://github.com'
     },
     {
       caption: 'In The Wilderness',
       images: [
-       'https://picsum.photos/1000/800',
+        'https://picsum.photos/1000/800',
       ],
       captionLink: 'https://udemy.com'
     },
     {
-      caption : 'This thing is just awesome',
-      images : [
+      caption: 'This thing is just awesome',
+      images: [
         'https://picsum.photos/1000/700',
       ],
       captionLink: 'https://facebook.com'
@@ -124,8 +116,49 @@ export class HomeComponent implements OnInit {
     slidesToShow: 4,
     slidesToScroll: 1
   };
-  
-  //_________________CARD_________________
-  
+
+  getHomeConfig(): void {
+    this.homeConfig.getHomeConfig().subscribe((configResponse) => {
+      this.Config = configResponse;
+    }, (err) => {
+      const snackbarRef = this.snackBar.openSnackBar(`An error occurred ${err}`, 'Retry');
+      snackbarRef.onAction().subscribe(() => {
+
+        // Snack bar action
+        // If retry is clicked then restart subscription
+        this.getHomeConfig();
+        // console.log('The snack-bar action was triggered!');
+      });
+    });
+  }
+  getAllPosts(): void{
+    this.publicPostService.getAllPosts().subscribe(result => {
+      console.log(result);
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 2000)
+    }, (error) => {
+      this.spinner.hide();
+      const snackbarRef = this.snackBar.openSnackBar(`An error occurred ${error}`, 'Retry');
+      snackbarRef.onAction().subscribe(() => {
+
+        // Snack bar action
+        // If retry is clicked then restart subscription
+        this.getAllPosts();
+        // console.log('The snack-bar action was triggered!');
+      });
+    })
+  }
+  constructor(private homeConfig: HomeService,
+    private publicPostService: PublicPostService,
+    private spinner: NgxSpinnerService,
+    private snackBar: SnackBarService) {
+    this.spinner.show();
+  }
+
+  ngOnInit(): void {
+    this.getHomeConfig();
+    this.getAllPosts();
+  }
 
 }
